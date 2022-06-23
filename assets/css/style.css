@@ -1,0 +1,208 @@
+@import url(https://fonts.googleapis.com/css2?family=Homenaje&family=Press+Start+2P&display=swap);
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    width: auto;
+    height: 100vh;
+    display: grid;
+    grid-template-areas:
+        'nav'
+        'aside'
+        'productos'
+        'pagination'
+        'footer';
+    grid-template-rows: 1fr 1fr 10fr 1fr 1fr;
+}
+
+nav {
+    grid-area: nav;
+    width: auto;
+    font-family: 'Press Start 2P',
+        cursive;
+    background-color: #0A100D;
+    font-size: small;
+    color: white;
+    text-align: start;
+}
+
+.navbar-brand {
+    font-size: large;
+    color: white;
+}
+
+.nav-link {
+    color: white;
+}
+
+.filtros {
+    background-color: lightgray;
+    text-align: center;
+    padding: 10px;
+}
+
+aside {
+    grid-area: aside;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.productos {
+    width: auto;
+    grid-area: productos;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr;
+    margin: auto;
+    height: 50vh;
+    overflow-y: scroll;
+}
+
+footer {
+    grid-area: footer;
+    font-family: 'Press Start 2P',
+        cursive;
+    background-color: #A22C29;
+    padding: 30px;
+}
+
+.producto {
+    font-family: 'Homenaje', sans-serif;
+    border: #0A100D solid 2px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.infoproducto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fotoproducto img {
+    height: 200px;
+    border-radius: 15px;
+}
+
+.boton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+}
+
+button {
+    width: 150px;
+    height: 30px;
+    font-size: small;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #A22C29;
+    color: white;
+    border: #0A100D solid 1 px;
+    border-radius: 5px;
+}
+
+.pagination {
+    grid-area: pagination;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    padding: 5px;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+footer {
+    height: auto;
+    font-size: xx-small;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.iconos {
+    font-size: large;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconos div {
+    padding: 2px;
+}
+
+@media (min-width: 576px) {
+    body {
+        height: 100vh;
+        grid-template-areas:
+            'nav aside'
+            'nav productos'
+            'nav productos'
+            'footer productos'
+            'footer pagination';
+        grid-template-columns: 1fr 10fr;
+    }
+
+    .navbar-brand {
+        font-size: medium;
+    }
+
+    .productos {
+        width: 80%;
+        height: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        align-items: center;
+        margin: 10px;
+
+    }
+
+    .producto {
+        height: 50vh;
+        width: auto;
+    }
+
+    .fotoproducto img {
+        height: 200px;
+        width: 180px;
+    }
+
+    .infoproducto {
+        font-size: 14px;
+    }
+
+    button {
+        width: 100px;
+        height: 30px;
+        font-size: 8px;
+    }
+}
